@@ -19,27 +19,39 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VOm-GA-P9s" customClass="GPUImageView">
                                 <rect key="frame" x="0.0" y="64" width="1024" height="704"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="0.18863177669446696" green="1" blue="0.073473534350310787" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="704" id="DLU-QL-dzZ"/>
-                                </constraints>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGH-KF-AaA">
                                 <rect key="frame" x="0.0" y="680" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="Album" id="Sqt-hV-h1X"/>
-                                    <barButtonItem systemItem="camera" id="o6C-8v-rJ3"/>
+                                    <barButtonItem title="Album" id="Sqt-hV-h1X">
+                                        <connections>
+                                            <action selector="photoFromAlbum:" destination="BYZ-38-t0r" id="XTB-3J-Qpi"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="camera" id="o6C-8v-rJ3">
+                                        <connections>
+                                            <action selector="photoFromCamera" destination="BYZ-38-t0r" id="V7r-ba-ckr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="dx2-wT-TnC"/>
+                                    <barButtonItem systemItem="pause" id="fk4-J8-Zfu">
+                                        <connections>
+                                            <action selector="pauseCapture" destination="BYZ-38-t0r" id="pLu-1c-U7K"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="VOm-GA-P9s" firstAttribute="bottom" secondItem="IGH-KF-AaA" secondAttribute="bottom" constant="44" id="Gnw-sl-t8k"/>
+                            <constraint firstAttribute="trailing" secondItem="VOm-GA-P9s" secondAttribute="trailing" id="LJK-X0-Rmi"/>
                             <constraint firstItem="IGH-KF-AaA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nro-CM-mh2"/>
-                            <constraint firstAttribute="trailing" secondItem="VOm-GA-P9s" secondAttribute="trailing" id="PXb-Bg-exk"/>
-                            <constraint firstAttribute="trailing" secondItem="VOm-GA-P9s" secondAttribute="trailing" id="WJ7-GY-f6H"/>
                             <constraint firstItem="VOm-GA-P9s" firstAttribute="top" secondItem="b3x-Le-6GS" secondAttribute="bottom" id="e1j-hx-bxK"/>
                             <constraint firstAttribute="trailing" secondItem="IGH-KF-AaA" secondAttribute="trailing" id="ga5-7X-0mo"/>
+                            <constraint firstItem="VOm-GA-P9s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jAi-eK-Fq9"/>
                             <constraint firstItem="VOm-GA-P9s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jvw-Ps-Z0B"/>
                             <constraint firstItem="waL-8e-mdc" firstAttribute="top" secondItem="IGH-KF-AaA" secondAttribute="bottom" id="v2E-dp-W7l"/>
                         </constraints>
@@ -49,6 +61,9 @@
                     <navigationItem key="navigationItem" id="XWM-lF-1oa"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
+                    <connections>
+                        <outlet property="imageView" destination="VOm-GA-P9s" id="tYi-h6-BtB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

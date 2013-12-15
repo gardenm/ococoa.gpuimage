@@ -380,6 +380,7 @@
 					GPUImage/framework/Source/iOS,
 				);
 				INFOPLIST_FILE = "GPUImage Demo/GPUImage Demo-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -399,6 +400,7 @@
 					GPUImage/framework/Source/iOS,
 				);
 				INFOPLIST_FILE = "GPUImage Demo/GPUImage Demo-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
